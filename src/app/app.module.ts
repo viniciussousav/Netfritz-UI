@@ -7,6 +7,9 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { TelaFitasComponent } from './tela-fitas/tela-fitas.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from './core/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
