@@ -1,19 +1,27 @@
 <div class="container">
 
+    <div class="content">
 
-    <div class="login-form">
-        <mat-form-field appearance="outline">
-            <mat-label>Outline form field</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-hint>Hint</mat-hint>
-        </mat-form-field>
+        <img src="../../assets/video-tape.svg" alt="">
 
+        <h1>Bem vindo ao Netflitz!</h1>
+        <h3>Preencha seus dados para fazer login!</h3>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Outline form field</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-hint>Hint</mat-hint>
-        </mat-form-field>
+        <div class="login-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Digite seu email</mat-label>
+                <input matInput placeholder="Ex. meuemail@email.com" type="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Digite a sua senha</mat-label>
+                <input matInput placeholder="Digite aqui a sua senha" type="password">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-stroked-button color="primary">Entrar</button>
+            <button mat-button [routerLink]="'/cadastro'">Ou, cadastre-se aqui</button>
+        </div>
+
     </div>
-
 </div>
