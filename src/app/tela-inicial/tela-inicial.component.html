@@ -7,7 +7,7 @@
             <input matInput [(ngModel)]="busca" placeholder="Um filme bem legal" type="text">
         </mat-form-field>
     
-        <button mat-flat-button color="primary">Pesquisar</button>
+        <button mat-flat-button color="primary" (click)="pesquisarFitas(this.busca)">Pesquisar</button>
     </div>
 
     <div class="fitas-list">
@@ -24,7 +24,6 @@
             <ng-template #elseBlock>
                 <img mat-card-image src="../../assets/images.png" alt="Capa da fita">
             </ng-template>
-
 
             <mat-card-content>
                 <p>

@@ -1,1 +1,35 @@
-<p>tela-fitas works!</p>
+<div class="container">
+
+    <img src="../../assets/cassette-tape.png" alt="">
+
+    <div class="fill-form">
+
+        <h3>Cadastrar nova fita</h3>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Digite o titulo</mat-label>
+            <input matInput [(ngModel)]="fita.titulo" placeholder="Ex. Análise e Projeto de Sistemas: A Missão" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Digite a descrição</mat-label>
+            <input matInput [(ngModel)]="fita.descricao" placeholder="Ex. Uma fita bem legal" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Digite o ano da fita</mat-label>
+            <input matInput [(ngModel)]="fita.ano" placeholder="Ex. 2021" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Digite o valor da fita</mat-label>
+            <input matInput [(ngModel)]="fita.valor" placeholder="Ex. 10" type="number">
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Insira a capa de um filme</mat-label>
+            <input matInput type="file">
+        </mat-form-field> -->
+
+        <div>
+            <button mat-stroked-button color="primary" (click)="cadastrarFita(fita)"> Cadastar Fita</button>
+            <button mat-button [routerLink]="'/login'"> Sair </button>
+        </div>
+    </div>
+</div>

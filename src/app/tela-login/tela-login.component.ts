@@ -27,7 +27,7 @@ export class TelaLoginComponent implements OnInit {
         if (user.cartao) {
           this.route.navigateByUrl("inicio");  
         } else {
-          console.log("Administrador", user as Administrador);
+          this.route.navigateByUrl("fitas");  
         }
       },
       error: () => {
