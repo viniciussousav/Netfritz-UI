@@ -1,19 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Usuario } from '../core/models/Usuario';
+import { Cliente } from '../core/models/Cliente';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class CadastroService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, senha: string){
-    return this.http.post<Usuario>(environment.url + '/login', {
-      email: email,
-      senha: senha
+  cadastrarCliente(cliente: Cliente){
+    return this.http.post<Cliente>(environment.url + '/cliente/cadastrar', {
+      cliente
     });
   }
 }

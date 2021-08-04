@@ -1,10 +1,10 @@
 export class Usuario {
     
-    protected id: string | null;
-    protected nome: string;
-    protected email: string;
-    protected senha: string;
-    protected dataCriacao: Date | null;
+    public id: string | null;
+    public nome: string;
+    public email: string;
+    public senha: string;
+    public dataCriacao: Date | null;
 
     constructor(nome: string, email: string, senha: string) {
         this.id = null;

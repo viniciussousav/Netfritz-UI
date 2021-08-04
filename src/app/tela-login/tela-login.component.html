@@ -19,7 +19,7 @@
         </div>
 
         <div>
-            <button mat-stroked-button color="primary">Entrar</button>
+            <button mat-stroked-button color="primary" (click)="login(email, senha)">Entrar</button>
             <button mat-button [routerLink]="'/cadastro'">Ou, cadastre-se aqui</button>
         </div>
 

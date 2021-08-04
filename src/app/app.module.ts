@@ -9,6 +9,7 @@ import { TelaFitasComponent } from './tela-fitas/tela-fitas.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './core/modules/material/material.module';
 import { HttpClientModule } from '@angular/common/http'
 
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
