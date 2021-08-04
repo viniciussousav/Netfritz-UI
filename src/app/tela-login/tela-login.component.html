@@ -10,11 +10,11 @@
         <div class="login-form">
             <mat-form-field appearance="outline">
                 <mat-label>Digite seu email</mat-label>
-                <input matInput placeholder="Ex. meuemail@email.com" type="email">
+                <input [(ngModel)]="email" matInput placeholder="Ex. meuemail@email.com" type="email">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Digite a sua senha</mat-label>
-                <input matInput placeholder="Digite aqui a sua senha" type="password">
+                <input [(ngModel)]="senha" matInput placeholder="Digite aqui a sua senha" type="password">
             </mat-form-field>
         </div>
 

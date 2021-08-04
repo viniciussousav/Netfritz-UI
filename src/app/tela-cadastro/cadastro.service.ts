@@ -12,7 +12,11 @@ export class CadastroService {
 
   cadastrarCliente(cliente: Cliente){
     return this.http.post<Cliente>(environment.url + '/cliente/cadastrar', {
-      cliente
+      nome: cliente.nome,
+      email: cliente.email,
+      senha: cliente.senha,
+      cartao: cliente.cartao,
+      dataNascimento: cliente.dataNascimento?.toString()
     });
   }
 }
