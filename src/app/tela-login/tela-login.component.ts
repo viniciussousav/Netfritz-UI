@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Administrador } from '../core/models/Administrador';
 import { Cliente } from '../core/models/Cliente';
+import { Usuario } from '../core/models/Usuario';
 import { LoginService } from './login.service';
 
 @Component({
@@ -15,15 +17,15 @@ export class TelaLoginComponent implements OnInit {
   email: string = '';
   senha: string = '';
 
-  constructor(private loginService: LoginService, private snackbar: MatSnackBar) { }
+  constructor(private loginService: LoginService, private snackbar: MatSnackBar, private route: Router) { }
 
   ngOnInit(): void { }
 
   login(email: string, senha: string) {
     return this.loginService.login(email, senha).subscribe({
-      next: (user) => {
-        if (user instanceof Cliente) {
-          console.log("Cliente", user);
+      next: (user: any) => {
+        if (user.cartao) {
+          this.route.navigateByUrl("inicio");  
         } else {
           console.log("Administrador", user as Administrador);
         }

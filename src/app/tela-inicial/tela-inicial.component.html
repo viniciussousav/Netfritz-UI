@@ -1,1 +1,39 @@
-<p>tela-inicial works!</p>
+<div class="container">
+
+
+    <div class="search">
+        <mat-form-field class="search-input" appearance="outline">
+            <mat-label> Busque pelo título </mat-label>
+            <input matInput [(ngModel)]="busca" placeholder="Um filme bem legal" type="text">
+        </mat-form-field>
+    
+        <button mat-flat-button color="primary">Pesquisar</button>
+    </div>
+
+    <div class="fitas-list">
+
+        <mat-card class="fita-card" *ngFor="let fita of fitas">
+            <mat-card-header>
+                <mat-icon mat-card-avatar class="material-icons">movie</mat-icon>
+                <mat-card-title> {{ fita.titulo }} </mat-card-title>
+                <mat-card-subtitle> {{ "Fita do ano " + fita.ano }} </mat-card-subtitle>
+            </mat-card-header>
+
+            <img *ngIf="fita.imagemUrl.length != 0; else elseBlock" mat-card-image [src]="fita.imagemUrl" alt="Capa da fita">
+
+            <ng-template #elseBlock>
+                <img mat-card-image src="../../assets/images.png" alt="Capa da fita">
+            </ng-template>
+
+
+            <mat-card-content>
+                <p>
+                    {{ fita.descricao }}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary">Comprar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

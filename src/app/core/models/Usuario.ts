@@ -1,4 +1,4 @@
-export class Usuario {
+export abstract class Usuario {
     
     public id: string | null;
     public nome: string;

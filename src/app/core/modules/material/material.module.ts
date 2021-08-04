@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatRippleModule } from "@angular/material/core";
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatCardModule,
     MatRippleModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule
   ],
   exports: [
     MatFormFieldModule,
@@ -31,7 +36,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatCardModule,
     MatRippleModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule
   ],
   declarations: []
 })
