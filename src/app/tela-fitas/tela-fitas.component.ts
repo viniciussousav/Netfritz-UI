@@ -12,6 +12,7 @@ export class TelaFitasComponent implements OnInit {
 
 
   fita: Fita = new Fita("", "", 10, 2021, "");
+  imagem: File | null = null;
 
   constructor(private fitaService: FitasService, private snackBar: MatSnackBar) { }
 
@@ -19,15 +20,30 @@ export class TelaFitasComponent implements OnInit {
 
   cadastrarFita(fita: Fita) {
     return this.fitaService.cadastrarFita(fita).subscribe({
-      next: (fita) => {
+      next: (fitaResult) => {
+
+        console.log(fitaResult.id);
+
+        if (this.imagem != null) {
+          this.fitaService.uploadImagem(this.imagem, fitaResult.id).subscribe({
+            next: () => {
+              this.snackBar.open("Fita cadastrada com sucesso", "Fechar");
+            },
+            error: () => {
+              this.snackBar.open("Fita cadastrada com sucesso sem a capa", "Fechar");
+            }
+          })
+        }
         this.fita = new Fita("", "", 10, 2021, "");
-        this.snackBar.open("Fita cadastrada com sucesso", "Fechar");
       },
       error: () => {
         this.snackBar.open("Erro ao cadastrar fita", "Fechar");
-
       }
-    })
+    });
+  }
+
+  imageInputChange(fileInputEvent: any) {
+    this.imagem = fileInputEvent.target.files[0];
   }
 
 }

@@ -19,4 +19,15 @@ export class FitasService {
       imagemUrl: ""
     });
   }
+
+  uploadImagem(image: File, fitaId: string){
+
+
+    console.log("Service: " + image.name);
+    console.log("Service: " + image.size);
+
+    const formData: FormData = new FormData();
+    formData.append('imagem', image, image.name);
+    return this.http.put<string>(environment.url + '/fitas/upload-imagem/' + fitaId, formData);
+  }
 }
